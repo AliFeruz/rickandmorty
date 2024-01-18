@@ -2,6 +2,8 @@ import React from 'react'
 import { GetServerSideProps } from 'next'
 import { RickAndMortyCharacter } from '@/types';
 import CharacterCard from '@/components/CharacterCard';
+import Link from 'next/link';
+import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/solid";
 
 
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
@@ -29,17 +31,28 @@ type Props = {
 }
 
 const Characters = ({characters, info}: Props) => {
-  console.log(info)
   
   return (
-    <div className="flex mt-24 flex-col items-center py-20 justify-start mx-10">
-      <h1 className='font-bold text-fuchsia-400 text-2xl'>Server Side Render</h1>
+    <div className="flex mt-24 flex-col items-center py-20 justify-start mx-auto">
+      <h1 className='font-bold text-fuchsia-200 text-3xl'>Server Side Render</h1>
+      <div className='mt-8 h-auto w-5/6 p-2 flex mx-5 justify-between'>
+      <button className='flex gap-6 text-orange-500 text-2xl justify-between'>
+       <ArrowLeftIcon className="h-[30px] w-[30px]"/>
+      Prev
+      </button>
+      <button className='flex gap-6 text-orange-500 text-2xl justify-between'>
+      Next
+      <ArrowRightIcon className="h-[30px] w-[30px]"/>
+      </button>
+      </div>
           <div className='grid-container mt-10'>
           {characters.map((character: RickAndMortyCharacter) => (
-          <CharacterCard
-            key={character.id}
+            <Link key={character.id} href={`/characters/character/[id]`} as={`/characters/character/${character.id}`}>
+            <CharacterCard
             character={character}
           />
+            </Link>
+          
         ))}
           </div>
     </div>

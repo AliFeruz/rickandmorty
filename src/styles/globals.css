@@ -30,14 +30,14 @@
   }
 
   .icon {
-    @apply dark:text-fuchsia-100 text-cyan-950 hover:text-cyan-600 dark:hover:text-fuchsia-400
+    @apply text-orange-200 hover:text-fuchsia-400 
   }
 
   .text {
-    @apply dark:text-fuchsia-50 text-cyan-950
+    @apply text-orange-300
   }
 
   .logo {
-    @apply text-5xl bg-gradient-to-l from-cyan-700 via-cyan-500 to-fuchsia-400 bg-clip-text text-transparent p-2 font-bold tracking-wide transition duration-300 ease-in-out hover:animate-ping
+    @apply text-5xl bg-gradient-to-l from-orange-600 via-orange-400 to-fuchsia-600 bg-clip-text text-transparent p-2 font-bold tracking-wide transition duration-300 ease-in-out hover:text-orange-700
   }
  }
