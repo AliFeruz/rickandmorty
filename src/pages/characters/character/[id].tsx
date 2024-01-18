@@ -1,5 +1,4 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { useRouter } from 'next/router';
 import React from 'react'
 import { Inter } from 'next/font/google'
 import { RickAndMortyCharacter } from '@/types';
@@ -47,7 +46,7 @@ export const getStaticProps: GetStaticProps<Props> =async ({params}) => {
 }
 
 const character = ({character}: Props) => {
-  const router = useRouter();
+
 
   return (
     <div className={`mx-auto relative h-auto mt-32 md:w-5/6 py-24 ${inter.className}`}>
