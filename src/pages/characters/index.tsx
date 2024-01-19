@@ -38,10 +38,10 @@ const Characters = ({characters, info}: Props) => {
       <div className='mt-8 h-auto w-5/6 p-2 flex mx-5 justify-between'>
       <button className='flex gap-6 text-orange-500 text-2xl justify-between'>
        <ArrowLeftIcon className="h-[30px] w-[30px]"/>
-      Prev
+      <p>Prev</p>
       </button>
       <button className='flex gap-6 text-orange-500 text-2xl justify-between'>
-      Next
+      <p>Next</p>
       <ArrowRightIcon className="h-[30px] w-[30px]"/>
       </button>
       </div>
