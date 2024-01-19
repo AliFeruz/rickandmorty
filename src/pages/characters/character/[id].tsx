@@ -45,7 +45,7 @@ export const getStaticProps: GetStaticProps<Props> =async ({params}) => {
   
 }
 
-const character = ({character}: Props) => {
+const Character = ({character}: Props) => {
 
 
   return (
@@ -91,4 +91,4 @@ const character = ({character}: Props) => {
   )
 }
 
-export default character
+export default Character
