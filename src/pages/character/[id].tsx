@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import { RickAndMortyCharacter } from '@/types';
 import Link from 'next/link';
 import { ArrowLeftIcon } from "@heroicons/react/24/solid";
+import Image from 'next/image';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,7 +15,7 @@ type Props = {
 
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const response = await fetch("https://rickandmortyapi.com/api/character/?page=1");
+  const response = await fetch("https://rickandmortyapi.com/api/character");
   const result = await response.json();
   const characters = result.results;  
   const paths = characters.map((character:RickAndMortyCharacter) => ({
@@ -24,9 +25,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-export const getStaticProps: GetStaticProps<Props> =async ({params}) => {
+export const getStaticProps: GetStaticProps<Props> =async (context) => {
   try {
-      const id = params?.id
+      const { id } = context.params as any;
       const response = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
       const result: RickAndMortyCharacter = await response.json();
 
@@ -57,7 +58,8 @@ const Character = ({character}: Props) => {
       </Link>
       <div className='flex p-8 flex-col justify-between md:w-5/6 sm:flex-row w-full mt-10'>
         <div className='items-center md:mt-8 mb-10 shadow-md p-4 bg-fuchsia-200 rounded-md'>
-          <img src={character?.image} alt="image" className='w-full h-full object-cover rounded-md' />
+          <Image src={character?.image} alt="image" width={100} height={100} priority
+          className='w-full h-full object-cover rounded-md' />
           <div className="mt-6 pt-4">
             <h1 className="text-3xl text-center text-fuchsia-600 font-bold">{character.name}</h1>
           </div>

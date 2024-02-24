@@ -20,7 +20,7 @@ const NavBar = () => {
                     <h1 className="logo">Next Intro</h1>
                     </Link>
                 { isAboveMediumScreens ?(<div className="flex-between w-2/5">
-                    <Link href='/characters' className="flex items-center gap-3">
+                    <Link href='/characters/1' className="flex items-center gap-3">
                     <p className="text-3xl hover:text-orange-500 font-semibold text">Characters</p>
                     </Link>
                     <Link href='/episodes' className="flex items-center gap-3">
@@ -45,7 +45,7 @@ const NavBar = () => {
             </div>
             <div >
             <div className="ml-[20%] flex justify-between mt-10 flex-col gap-10 w-3/5">
-                    <Link href='/characters' onClick={()=> setIsMenuToggled(false)} className="flex items-center gap-3">
+                    <Link href='/characters/1' onClick={()=> setIsMenuToggled(false)} className="flex items-center gap-3">
                     <p className="text-3xl text font-semibold">Characters</p>
                     </Link>
                     <Link href='/episodes' onClick={()=> setIsMenuToggled(false)} className="flex items-center gap-3">
