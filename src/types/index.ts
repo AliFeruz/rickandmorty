@@ -19,3 +19,18 @@ export interface RickAndMortyCharacter {
     created: string;
   }
   
+  type Character = {
+    image: string;
+  };
+  
+  type Episode = {
+    name: string;
+    characters: Character[];
+    __typename: string;
+  };
+  
+export type EpisodeData = {
+    episodes: {
+      results: Episode[];
+    };
+  };

@@ -45,7 +45,7 @@ const Characters = ({characters, info}: Props) => {
   const handlePagination = (page: number) => {
     router.push(`/characters/${page}`);
   };
-  console.log(info)
+  
   return (
     <div className="flex mt-24 flex-col items-center py-20 justify-start mx-auto">
       <h1 className='font-bold text-fuchsia-200 text-3xl'>Server Side Render</h1>
